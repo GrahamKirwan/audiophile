@@ -1,9 +1,6 @@
 import React from "react";
-import Image from "next/image";
 
 import styles from "../layout/MainNav.module.scss";
-
-import som from "../../public/images/shared/icon-cart.svg";
 
 export default function MainNav() {
   return (
