@@ -1,0 +1,30 @@
+.nav {
+  background-color: var(--color-pry-200);
+  color: #fff;
+  height: 100px;
+}
+
+.container {
+  max-width: var(--max-container);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  text-transform: uppercase;
+
+  li {
+    margin: 0 15px;
+    a {
+      font-size: 0.8125rem;
+      line-height: 1.5625rem;
+      letter-spacing: 0.1rem;
+      font-weight: 700;
+    }
+  }
+}
