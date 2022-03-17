@@ -1,0 +1,74 @@
+.container {
+  background-color: var(--color-pry-100);
+  display: flex;
+  justify-content: space-between;
+  height: 33rem;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 11rem;
+
+  background-image: url("/images/home/desktop/pattern-circles.svg");
+  background-repeat: no-repeat;
+  background-position: left -12rem bottom -25rem;
+
+  &_left {
+    flex: 1;
+    position: relative;
+
+    img {
+      width: 65%;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, -0%);
+    }
+  }
+
+  &_right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &_content {
+      padding-left: 6rem;
+      width: 80%;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 3.5rem;
+      line-height: 3.625rem;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    p {
+      margin: 2rem 0;
+      font-size: 0.9375rem;
+      line-height: 1.5625rem;
+      font-weight: var(--font-weight-100);
+      letter-spacing: 0.05rem;
+      color: #fff;
+    }
+
+    a {
+      cursor: pointer;
+      color: var(--color-sec-200);
+      min-height: 3rem;
+      width: 10rem;
+      text-transform: uppercase;
+      display: flex;
+      -webkit-box-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      align-items: center;
+      font-size: 0.8125rem;
+      transition: var(--transition);
+      background-color: var(--color-sec-300);
+      font-weight: 800;
+      line-height: 1.5625rem;
+      letter-spacing: 0.1rem;
+    }
+  }
+}
