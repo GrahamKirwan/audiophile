@@ -45,3 +45,29 @@
     color: var(--color-sec-200);
   }
 }
+
+.btnThree {
+    cursor: pointer;
+    min-height: 3rem;
+    width: 10rem;
+    text-transform: uppercase;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    font-size: 0.8125rem;
+    transition: var(--transition);
+    background-color: transparent;
+    border: 0.1rem solid var(--color-sec-300);
+    color: var(--color-sec-300);
+    line-height: 1.5625rem;
+    letter-spacing: 0.1rem;
+    text-decoration: none;
+  
+    &:hover {
+        background-color: var(--color-sec-300);
+        color: var(--color-sec-200);
+        transition: var(--transition);
+    }
+  }
