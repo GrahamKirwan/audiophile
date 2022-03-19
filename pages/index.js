@@ -6,6 +6,7 @@ import HeroSection from '../components/Home/HeroSection'
 import ThreeCardProducts from '../components/Reusable/ThreeCardProducts'
 import OrangeSpeakerFeature from '../components/Reusable/OrangeSpeakerFeature'
 import GreySpeakerFeature from '../components/Reusable/GreySpeakerFeature'
+import GreyEarphonesFeature from '../components/Reusable/GreyEarphonesFeature'
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <ThreeCardProducts first={true} />
       <OrangeSpeakerFeature />
       <GreySpeakerFeature />
+      <GreyEarphonesFeature />
     </>
   )
 }
