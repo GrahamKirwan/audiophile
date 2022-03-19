@@ -1,0 +1,43 @@
+.container {
+  height: 35rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 11rem;
+
+
+  &_left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    div {
+      padding-right: 7rem;
+    }
+
+    h3 {
+      font-size: 2.5rem;
+      line-height: 2.75rem;
+      max-width: 35.25rem;
+      margin: 0rem auto 2rem;
+
+      span {
+        color: var(--color-pry-100);
+      }
+    }
+
+    p {
+      font-size: 0.9375rem;
+      line-height: 1.5625rem;
+      font-weight: var(--font-weight-100);
+      letter-spacing: 0.05rem;
+    }
+  }
+
+  &_right {
+    flex: 1;
+    background-image: url("/images/shared/man-headerphone.png");
+    background-size: cover;
+    border-radius: 10px;
+  }
+}
