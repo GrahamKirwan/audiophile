@@ -17,7 +17,6 @@ export default function Home() {
       <OrangeSpeakerFeature />
       <GreySpeakerFeature />
       <GreyEarphonesFeature />
-      <GreyEarphonesFeature />
       <AboutComp />
     </>
   )
