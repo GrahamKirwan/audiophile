@@ -1,6 +1,5 @@
 .largeMargin {
   margin-top: 59.25rem;
-  margin-bottom: 11rem;
 }
 
 .cardsContainer {
@@ -8,6 +7,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 25px;
+  margin-bottom: 11rem;
 }
 
 
