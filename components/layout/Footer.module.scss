@@ -67,4 +67,12 @@
   a {
     padding-left: 20px;
   }
+
+  i {
+      font-size: 2rem;
+
+      &:hover {
+          color: var(--color-pry-100);
+      }
+  }
 }

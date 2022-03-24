@@ -1,12 +1,11 @@
 import React from "react";
 import Link from "next/link";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 
 import styles from "../layout/Footer.module.scss";
 
 export default function Footer() {
-
-    const router = useRouter();
+  const router = useRouter();
 
   return (
     <footer className={styles.footer}>
@@ -24,30 +23,54 @@ export default function Footer() {
         </div>
         <div className={styles.container_right}>
           <nav>
-          <ul className={styles.menu}>
-          <li style={router.route == '/' ? {color: 'var(--color-pry-100)'} : {}}>
-            <Link href="/" className={styles.selected}>Home</Link>
-          </li>
-          <li style={router.route == '/headphones' ? {color: 'var(--color-pry-100)'} : {}}>
-            <Link href="/headphones">Headphones</Link>
-          </li>
-          <li style={router.route == '/speakers' ? {color: 'var(--color-pry-100)'} : {}}>
-            <Link href="/speakers">Speakers</Link>
-          </li>
-          <li style={router.route == '/earphones' ? {color: 'var(--color-pry-100)'} : {}}>
-            <Link href="/earphones">Earphones</Link>
-          </li>
-        </ul>
+            <ul className={styles.menu}>
+              <li
+                style={
+                  router.route == "/" ? { color: "var(--color-pry-100)" } : {}
+                }
+              >
+                <Link href="/" className={styles.selected}>
+                  Home
+                </Link>
+              </li>
+              <li
+                style={
+                  router.route == "/headphones"
+                    ? { color: "var(--color-pry-100)" }
+                    : {}
+                }
+              >
+                <Link href="/headphones">Headphones</Link>
+              </li>
+              <li
+                style={
+                  router.route == "/speakers"
+                    ? { color: "var(--color-pry-100)" }
+                    : {}
+                }
+              >
+                <Link href="/speakers">Speakers</Link>
+              </li>
+              <li
+                style={
+                  router.route == "/earphones"
+                    ? { color: "var(--color-pry-100)" }
+                    : {}
+                }
+              >
+                <Link href="/earphones">Earphones</Link>
+              </li>
+            </ul>
           </nav>
           <div className={styles.container_right_socials}>
             <a href="#">
-              <img src="/images/shared/desktop/icon-facebook.svg"></img>
+              <i className="fa-brands fa-facebook"></i>
             </a>
             <a href="#">
-              <img src="/images/shared/desktop/icon-instagram.svg"></img>
+              <i className="fa-brands fa-twitter"></i>
             </a>
             <a href="#">
-              <img src="/images/shared/desktop/icon-twitter.svg"></img>
+              <i className="fa-brands fa-instagram"></i>
             </a>
           </div>
         </div>

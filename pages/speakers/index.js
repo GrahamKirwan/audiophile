@@ -1,25 +1,11 @@
 import React from "react";
 
+import HeroMain from "../../components/Reusable/HeroMain";
+
 export default function SpeakersPage() {
   return (
     <>
-      <div>speakjers</div>
-      <div>speakjers</div>
-      <div>speakjers</div>
-      <div>speakjers</div>
-      <div>speakjers</div>
-      <div>speakjers</div>
-      <div>speakjers</div>
-      <div>speakjers</div>
-      <div>speakjers</div>
-      <div>speakjers</div>
-      <div>speakjers</div>
-      <div>speakjers</div>
-      <div>speakjers</div>
-      <div>speakjers</div>
-      <div>speakjers</div>
-      <div>speakjers</div>
-      <div>speakjers</div>
+        <HeroMain page='Speakers' />
     </>
   );
 }

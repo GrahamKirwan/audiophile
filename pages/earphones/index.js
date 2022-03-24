@@ -1,20 +1,11 @@
 import React from 'react'
 
+import HeroMain from '../../components/Reusable/HeroMain'
+
 export default function EarphonesPage() {
   return (
-    <div>
-        <h1>earphoens</h1>
-        <h1>earphoens</h1>
-        <h1>earphoens</h1>
-        <h1>earphoens</h1>
-        <h1>earphoens</h1>
-        <h1>earphoens</h1>
-        <h1>earphoens</h1>
-        <h1>earphoens</h1>
-        <h1>earphoens</h1>
-        <h1>earphoens</h1>
-        <h1>earphoens</h1>
-        <h1>earphoens</h1>
-    </div>
+    <>
+        <HeroMain page='Earphones' />
+    </>
   )
 }
