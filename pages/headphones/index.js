@@ -5,6 +5,7 @@ import ThreeCardProducts from '../../components/Reusable/ThreeCardProducts'
 import AboutComp from '../../components/Reusable/AboutComp'
 
 import data from '../../data/data.json'
+import ProductAbout from '../../components/Reusable/ProductAbout'
 
 export default function HeadphonesPage() {
 
@@ -15,13 +16,14 @@ export default function HeadphonesPage() {
             newData.push(data);
         }
     })
+    // Sort the array to put the product with a 'new' product first 
+    newData.sort(function(x, y) { return y.new - x.new });
 
   return (
     <>
         <HeroMain page='Headphones' />
-        {newData.map((product) => <h1>{product.name}</h1>)}
-        {newData.map((product) => <h1>{product.name}</h1>)}
-        <ThreeCardProducts />
+        {newData.map((product, index) => <ProductAbout productDetails={product} id={index} key={index}/>)}
+        <ThreeCardProducts topMargin={true} />
         <AboutComp />
     </>
   )

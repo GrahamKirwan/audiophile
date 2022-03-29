@@ -5,9 +5,10 @@ import styles from "../Reusable/ThreeCardProducts.module.scss";
 
 export default function ThreeCardProducts(props) {
   let isFirstComponent = props.first ? styles.largeMargin : "";
+  let isTopMargin = props.topMargin ? styles.topMargin : "";
 
   return (
-    <div className={`${styles.cardsContainer} ${isFirstComponent}`}>
+    <div className={`${styles.cardsContainer} ${isFirstComponent} ${isTopMargin}`}>
       <Link href="/headphones">
         <a className={styles.card}>
             <img className={`${styles.cardImage} ${styles.cardImageMain}`} src="/images/shared/headphones.png"></img>
