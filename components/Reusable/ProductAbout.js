@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 import btnStyles from "../../styles/UI/ButtonStyles.module.scss";
 import styles from "../Reusable/ProductAbout.module.scss";
@@ -19,9 +20,16 @@ export default function ProductAbout(props) {
           )}
           <h2>{props.productDetails.name}</h2>
           <p>{props.productDetails.description}</p>
-          <a href="#" className={btnStyles.btnPrimary}>
-            See product
-          </a>
+          <Link
+            href={{
+              pathname: `/product/[slug]`,
+              query: {
+                slug: props.productDetails.slug,
+              },
+            }}
+          >
+            <a className={btnStyles.btnPrimary}>See product</a>
+          </Link>
         </div>
       )}
 
@@ -34,9 +42,16 @@ export default function ProductAbout(props) {
           )}
           <h2>{props.productDetails.name}</h2>
           <p>{props.productDetails.description}</p>
-          <a href="#" className={btnStyles.btnPrimary}>
-            See product
-          </a>
+          <Link
+            href={{
+              pathname: `/product/[slug]`,
+              query: {
+                slug: props.productDetails.slug,
+              },
+            }}
+          >
+            <a className={btnStyles.btnPrimary}>See product</a>
+          </Link>
         </div>
       ) : (
         <img src={props.productDetails.image.desktop} />
