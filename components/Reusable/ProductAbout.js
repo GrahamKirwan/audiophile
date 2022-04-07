@@ -5,7 +5,6 @@ import btnStyles from "../../styles/UI/ButtonStyles.module.scss";
 import styles from "../Reusable/ProductAbout.module.scss";
 
 export default function ProductAbout(props) {
-  console.log(props.id % 2 !== 0);
 
   return (
     <div className={styles.container}>
