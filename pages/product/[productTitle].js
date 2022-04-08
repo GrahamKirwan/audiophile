@@ -1,16 +1,22 @@
 import React from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-import ThreeCardProducts from '../../components/Reusable/ThreeCardProducts'
-import AboutComp from '../../components/Reusable/AboutComp'
+import ThreeCardProducts from "../../components/Reusable/ThreeCardProducts";
+import AboutComp from "../../components/Reusable/AboutComp";
 
 import styles from "../../styles/ProductTitle.module.scss";
 import btnStyles from "../../styles/UI/ButtonStyles.module.scss";
 
 import data from "../../data/data.json";
 
+import { useContext } from "react";
+import { CartContext } from "../../components/store/cart-context";
+
 export default function ProductPage(props) {
+  const ctx = useContext(CartContext);
+
   const router = useRouter();
   const id = router.query.productTitle;
   let productData;
@@ -21,6 +27,23 @@ export default function ProductPage(props) {
     }
   });
 
+  const [cartNum, updateCartNum] = useState(1);
+
+  function minusBtnHandler() {
+    if (cartNum > 1) {
+      updateCartNum(cartNum - 1);
+    }
+  }
+
+  function plusBtnHandler() {
+    updateCartNum(cartNum + 1);
+  }
+
+  function addToCartBtnHandler() {
+      ctx.addToCart(productData.slug, cartNum)
+        updateCartNum(1);
+  }
+
   return (
     <>
       <div className={styles.btnContainer}>
@@ -29,6 +52,9 @@ export default function ProductPage(props) {
       <div className={styles.productTopContainer}>
         <img src={productData.image.desktop}></img>
         <div>
+          {productData.new ? (
+            <h4 className={styles.productTopContainer__newProd}>NEW PRODUCT</h4>
+          ) : undefined}
           <h1>{productData.name}</h1>
           <p>{productData.description}</p>
           <h3>$ {productData.price}</h3>
@@ -36,15 +62,15 @@ export default function ProductPage(props) {
             <aside
               className={styles.productTopContainer__cartContainer__counter}
             >
-              <button>
+              <button onClick={minusBtnHandler}>
                 <i className="fas fa-minus"></i>
               </button>
-              <span>1</span>
-              <button>
+              <span>{cartNum}</span>
+              <button onClick={plusBtnHandler}>
                 <i className="fas fa-plus"></i>
               </button>
             </aside>
-            <a className={btnStyles.btnPrimary}>Add to cart</a>
+            <a onClick={addToCartBtnHandler} className={btnStyles.btnPrimary}>Add to cart</a>
           </section>
         </div>
       </div>
@@ -83,22 +109,22 @@ export default function ProductPage(props) {
             <img src={productData.others[0].image.desktop}></img>
             <h3>{productData.others[0].name}</h3>
             <Link href={`/product/${productData.others[0].slug}`}>
-            <a className={btnStyles.btnPrimary}>See product</a>
-          </Link>
+              <a className={btnStyles.btnPrimary}>See product</a>
+            </Link>
           </div>
           <div className={styles.productOthers__container__item}>
             <img src={productData.others[1].image.desktop}></img>
             <h3>{productData.others[1].name}</h3>
             <Link href={`/product/${productData.others[1].slug}`}>
-            <a className={btnStyles.btnPrimary}>See product</a>
-          </Link>
+              <a className={btnStyles.btnPrimary}>See product</a>
+            </Link>
           </div>
           <div className={styles.productOthers__container__item}>
             <img src={productData.others[2].image.desktop}></img>
             <h3>{productData.others[2].name}</h3>
             <Link href={`/product/${productData.others[2].slug}`}>
-            <a className={btnStyles.btnPrimary}>See product</a>
-          </Link>
+              <a className={btnStyles.btnPrimary}>See product</a>
+            </Link>
           </div>
         </div>
       </div>

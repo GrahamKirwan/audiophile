@@ -25,7 +25,7 @@
 
   li {
     margin: 0 15px;
-    
+
     a {
       font-size: 0.8125rem;
       line-height: 1.5625rem;
@@ -33,4 +33,21 @@
       font-weight: 700;
     }
   }
+}
+.cartNotiContainer {
+    position: relative;
+}
+
+.cartNoti {
+    background-color: var(--color-pry-100);
+    border-radius: 100px;
+    font-size: 0.6rem;
+    width: 1.1rem;
+    height: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -50%;
+    right: -50%;
 }

@@ -2,9 +2,14 @@ import React from "react";
 import Link from "next/link";
 import { useRouter } from 'next/router'
 
+import { useContext } from "react";
+import { CartContext } from "../../components/store/cart-context";
+
 import styles from "../layout/MainNav.module.scss";
 
 export default function MainNav() {
+
+    const ctx = useContext(CartContext);
 
     const router = useRouter();
 
@@ -26,8 +31,9 @@ export default function MainNav() {
             <Link href="/earphones">Earphones</Link>
           </li>
         </ul>
-        <div>
+        <div className={styles.cartNotiContainer}>
             <img src="/images/shared/icon-cart.svg"></img>
+            <div className={styles.cartNoti}><span>{ctx.cartTotal}</span></div>
         </div>
       </div>
     </nav>
