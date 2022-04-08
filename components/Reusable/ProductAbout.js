@@ -5,7 +5,6 @@ import btnStyles from "../../styles/UI/ButtonStyles.module.scss";
 import styles from "../Reusable/ProductAbout.module.scss";
 
 export default function ProductAbout(props) {
-
   return (
     <div className={styles.container}>
       {props.id % 2 == 0 ? (
@@ -19,14 +18,7 @@ export default function ProductAbout(props) {
           )}
           <h2>{props.productDetails.name}</h2>
           <p>{props.productDetails.description}</p>
-          <Link
-            href={{
-              pathname: `/product/[slug]`,
-              query: {
-                slug: props.productDetails.slug,
-              },
-            }}
-          >
+          <Link href={`/product/${props.productDetails.slug}`}>
             <a className={btnStyles.btnPrimary}>See product</a>
           </Link>
         </div>
@@ -41,14 +33,7 @@ export default function ProductAbout(props) {
           )}
           <h2>{props.productDetails.name}</h2>
           <p>{props.productDetails.description}</p>
-          <Link
-            href={{
-              pathname: `/product/[slug]`,
-              query: {
-                slug: props.productDetails.slug,
-              },
-            }}
-          >
+          <Link href={`/product/${props.productDetails.slug}`}>
             <a className={btnStyles.btnPrimary}>See product</a>
           </Link>
         </div>
