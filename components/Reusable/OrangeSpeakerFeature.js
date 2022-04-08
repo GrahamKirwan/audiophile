@@ -1,4 +1,6 @@
 import React from "react";
+import Link from "next/link";
+
 import styles from "../Reusable/OrangeSpeakerFeature.module.scss";
 import btnStyles from "../../styles/UI/ButtonStyles.module.scss";
 
@@ -20,9 +22,9 @@ export default function OrangeSpeakerFeature() {
             truly remarkable sound.
           </p>
 
-          <a href="#" className={btnStyles.btnSecondary}>
-            See product
-          </a>
+          <Link href={`/product/zx9-speaker`}>
+            <a className={btnStyles.btnPrimary}>See product</a>
+          </Link>
         </div>
       </div>
     </div>
