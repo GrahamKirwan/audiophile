@@ -13,6 +13,10 @@ export default function MainNav() {
 
     const router = useRouter();
 
+    function cartBtnHandler() {
+        console.log('fknfkfkn')
+    }
+
   return (
     <nav className={styles.nav}>
       <div className={styles.container}>
@@ -31,7 +35,7 @@ export default function MainNav() {
             <Link href="/earphones">Earphones</Link>
           </li>
         </ul>
-        <div className={styles.cartNotiContainer}>
+        <div onClick={cartBtnHandler} className={styles.cartNotiContainer}>
             <img src="/images/shared/icon-cart.svg"></img>
             <div className={styles.cartNoti}><span>{ctx.cartTotal}</span></div>
         </div>

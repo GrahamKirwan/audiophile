@@ -21,9 +21,10 @@ export default function ProductPage(props) {
   const id = router.query.productTitle;
   let productData;
 
-  props.data.map((data) => {
+  props.data.map((data, index) => {
     if (data.slug == id) {
       productData = data;
+      productData.key = index;
     }
   });
 
@@ -82,9 +83,9 @@ export default function ProductPage(props) {
         <div className={styles.productBottomContainer__right}>
           <div>
             <h2>IN THE BOX</h2>
-            {productData.includes.map((item) => {
+            {productData.includes.map((item, index) => {
               return (
-                <p>
+                <p key={index}>
                   <span>{item.quantity}x</span>
                   {item.item}
                 </p>
