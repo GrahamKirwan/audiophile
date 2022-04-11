@@ -2,10 +2,11 @@ import React from "react";
 import Link from "next/link";
 import { useRouter } from 'next/router'
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../../components/store/cart-context";
 
 import styles from "../layout/MainNav.module.scss";
+import Overlay from "./Overlay";
 
 export default function MainNav() {
 
@@ -13,25 +14,36 @@ export default function MainNav() {
 
     const router = useRouter();
 
+    const [overlayShowing, setOverlayShowing] = useState(false);
+
     function cartBtnHandler() {
-        console.log('fknfkfkn')
+        if(overlayShowing == false) {
+            setOverlayShowing(true)
+        } else {
+            setOverlayShowing(false)
+        }
+    }
+
+    function overlayClickHandler() {
+        setOverlayShowing(false)
     }
 
   return (
+      <>
     <nav className={styles.nav}>
       <div className={styles.container}>
       <img src="/images/shared/audiophile-logo.svg" />
         <ul className={styles.menu}>
-          <li style={router.route == '/' ? {color: 'var(--color-pry-100)'} : {}}>
+          <li onClick={() => setOverlayShowing(false)} style={router.route == '/' ? {color: 'var(--color-pry-100)'} : {}}>
             <Link href="/" className={styles.selected}>Home</Link>
           </li>
-          <li style={router.route == '/headphones' ? {color: 'var(--color-pry-100)'} : {}}>
+          <li onClick={() => setOverlayShowing(false)} style={router.route == '/headphones' ? {color: 'var(--color-pry-100)'} : {}}>
             <Link href="/headphones">Headphones</Link>
           </li>
-          <li style={router.route == '/speakers' ? {color: 'var(--color-pry-100)'} : {}}>
+          <li onClick={() => setOverlayShowing(false)} style={router.route == '/speakers' ? {color: 'var(--color-pry-100)'} : {}}>
             <Link href="/speakers">Speakers</Link>
           </li>
-          <li style={router.route == '/earphones' ? {color: 'var(--color-pry-100)'} : {}}>
+          <li onClick={() => setOverlayShowing(false)} style={router.route == '/earphones' ? {color: 'var(--color-pry-100)'} : {}}>
             <Link href="/earphones">Earphones</Link>
           </li>
         </ul>
@@ -41,5 +53,7 @@ export default function MainNav() {
         </div>
       </div>
     </nav>
+    <Overlay overlayClickHandler={overlayClickHandler} show={overlayShowing} />
+    </>
   );
 }
