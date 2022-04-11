@@ -7,3 +7,23 @@
     z-index: 99;
     background-color: rgba(0, 0, 0, 0.616);
 }
+
+.cartContainer {
+    max-width: var(--max-container);
+  margin: 0 auto;
+  position: relative;
+    
+}
+
+.cart {
+    width: 23.5625rem;
+    background-color: var(--color-sec-200);
+    position: absolute;
+    top: 0%;
+    right: 0px;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-sizing: border-box;
+    z-index: 100;
+    margin-top: 10px;
+}

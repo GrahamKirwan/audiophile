@@ -14,11 +14,18 @@ export default function Overlay(props) {
         }
      }, [props.show]);
 
-     function overlayClickHandler() {
-         props.overlayClickHandler();
+     function overlayClickHandler(e) {
+         if (e.target.tagName == 'DIV')
+         {
+            props.overlayClickHandler();
+         }
      }
 
   return (
-    <div onClick={overlayClickHandler} className={styles.overlay} style={props.show ? {display: 'initial'} : {display: 'none'}}></div>
+    <div onClick={overlayClickHandler} className={styles.overlay} style={props.show ? {display: 'initial'} : {display: 'none'}}>
+        <div className={styles.cartContainer}>
+            <aside className={styles.cart}>CART</aside>
+        </div>
+    </div>
   )
 }
