@@ -17,6 +17,7 @@ export default function Overlay(props) {
      function overlayClickHandler(e) {
          if (e.target.tagName == 'DIV')
          {
+             console.log('clicked on div')
             props.overlayClickHandler();
          }
      }
