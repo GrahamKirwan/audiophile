@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
+import CartItem from "../Reusable/CartItem";
 
 import styles from "../layout/Overlay.module.scss";
 import btnStyles from "../../styles/UI/ButtonStyles.module.scss";
@@ -34,7 +35,10 @@ export default function Overlay(props) {
                 <p>Remove all</p>
             </div>
             <div className={styles.cartContentContainer_middle}>
-                <p>test</p>
+                <CartItem />
+                <CartItem />
+                <CartItem />
+                <CartItem />
             </div>
             <div className={styles.cartContentContainer_bottom}>
                 <h5>Total</h5>

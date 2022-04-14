@@ -1,0 +1,82 @@
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  &_left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    img {
+      position: relative;
+      object-fit: contain;
+      height: 4.5rem;
+      max-width: 4.5rem;
+      border-radius: var(--border-radius);
+      margin-right: 1rem;
+    }
+
+    &_info {
+      h6 {
+        margin: 0;
+        text-transform: uppercase;
+        font-size: 0.8375rem;
+        line-height: 1.5625rem;
+      }
+
+      p {
+        margin: 0;
+        font-size: 0.8rem;
+        line-height: 1.5625rem;
+        font-weight: var(--font-weight-400);
+        color: var(--color-sec-700);
+      }
+    }
+  }
+
+  &_right {
+    &_counter {
+      width: 6rem;
+      height: 2rem;
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      span {
+        background-color: var(--color-sec-500);
+        text-align: center;
+        font-weight: var(--font-weight-400);
+        font-family: var(--font-pry-100);
+        font-size: 0.8rem;
+      }
+
+      button {
+        width: 33%;
+        height: 100%;
+        border: none;
+        background-color: var(--color-sec-500);
+        font-weight: var(--font-weight-400);
+        cursor: pointer;
+        transition: var(--transition);
+
+        i {
+          color: rgb(77, 77, 77);
+          font-size: 0.5rem;
+          font-weight: 900;
+        }
+
+        &:hover {
+          transition: var(--transition);
+          background-color: var(--color-sec-600);
+        }
+
+        &:hover > i {
+          color: var(--color-pry-100);
+        }
+      }
+    }
+  }
+}
