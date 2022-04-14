@@ -1,29 +1,84 @@
 .overlay {
-    position: fixed;
-    top: 100px;
-    left: 0;
-    width: 100%;
-    height: calc(100% - 100px);
-    z-index: 99;
-    background-color: rgba(0, 0, 0, 0.616);
+  position: fixed;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 100px);
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.616);
 }
 
 .cartContainer {
-    max-width: var(--max-container);
+  max-width: var(--max-container);
   margin: 0 auto;
   position: relative;
-    
 }
 
 .cart {
-    width: 23.5625rem;
-    background-color: var(--color-sec-200);
-    position: absolute;
-    top: 0%;
-    right: 0px;
-    border-radius: var(--border-radius);
-    padding: 2rem;
-    box-sizing: border-box;
-    z-index: 100;
-    margin-top: 10px;
+  width: 23.5625rem;
+  background-color: var(--color-sec-200);
+  position: absolute;
+  top: 0%;
+  right: 0px;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-sizing: border-box;
+  z-index: 100;
+  margin-top: 10px;
+}
+
+.cartContentContainer {
+  &_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h3 {
+      margin: 0;
+    }
+    p {
+      margin: 0;
+      font-size: 0.9375rem;
+      line-height: 1.5625rem;
+      letter-spacing: 0.05rem;
+      transition: all .2s;
+
+      &:hover {
+          cursor: pointer;
+          color: var(--color-pry-100);
+      }
+    }
+  }
+
+  &_middle {
+    height: 15rem;
+    width: 100%;
+    margin: 1rem 0rem;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+  }
+
+  &_bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h5 {
+        text-transform: uppercase;
+        font-size: 0.8375rem;
+        line-height: 1.5625rem;
+        font-weight: var(--font-weight-400);
+        color: var(--color-sec-700);
+        margin-top: 0;
+    }
+
+    p {
+        font-size: 0.9375rem;
+        line-height: 1.5625rem;
+        font-weight: var(--font-weight-400);
+        letter-spacing: 0.05rem;
+        margin-top: 0;
+    }
+  }
 }
