@@ -1,0 +1,111 @@
+.btnContainer {
+    margin-top: 11rem;
+    margin-bottom: 3rem;
+  
+    button {
+      text-transform: capitalize;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: var(--font-weight-300);
+      background-color: transparent;
+      color: var(--color-pry-200);
+      letter-spacing: 0.05rem;
+      padding: 0;
+    }
+  }
+
+  .checkoutContainer {
+    display: flex;
+    margin-bottom: 3rem;
+  }
+
+  .checkoutForm {
+    background-color: var(--color-sec-200);
+    height: 140vh;
+    margin-right: 1rem;
+    border-radius: 10px;
+    width: 66.6%;
+    padding: 3rem;
+
+    h2 {
+        margin-bottom: 2rem;
+        margin-top: 0;
+        text-transform: uppercase;
+        font-size: 2rem;
+        letter-spacing: 0.1rem;
+    }
+
+    form {
+
+        h3 {
+            margin: 2rem 0rem 1rem;
+            text-transform: uppercase;
+            font-size: 0.8125rem;
+            color: var(--color-pry-100);
+            letter-spacing: 0.1rem;
+
+        }
+
+    }
+  }
+
+.inputGroup {
+
+    margin-bottom: 10px;
+    display: flex;  
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 4rem;
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        width: 48%;
+        margin-bottom: 2rem;
+
+        label {
+            text-transform: capitalize;
+            font-size: 0.75rem;
+            letter-spacing: -0.013125rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        input {
+            min-height: 3.5rem;
+            border-radius: var(--border-radius);
+            border: 0.1rem solid rgb(207, 207, 207);
+            font-family: var(--font-pry-100);
+            padding: 0rem 1.5rem;
+            color: var(--color-sec-400);
+            font-weight: var(--font-weight-400);
+            font-size: 0.875rem;
+            text-transform: capitalize;
+            background-color: var(--color-sec-200);
+
+            &:hover {
+                outline: 0.1rem solid var(--color-pry-100);
+            }
+
+            &:focus {
+                outline: 0.1rem solid var(--color-pry-100);
+
+            }
+        
+        }
+    }
+}
+
+  .checkoutSummary {
+    background-color: var(--color-sec-200);
+    height: 300px;
+    margin-left: 1rem;
+    border-radius: 10px;
+    width: 33.3%;
+    position: sticky;
+    top: 7rem;
+    padding: 3rem;
+
+  }

@@ -5,6 +5,8 @@ import { CartContextProvider } from "../components/store/cart-context";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
+
+
   return (
     <CartContextProvider>
       <Layout>
