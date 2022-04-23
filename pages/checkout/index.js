@@ -1,19 +1,42 @@
 import React from "react";
 
-import { useEffect } from "react";
-
+import { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+
+import CartItem from "../../components/Reusable/CartItem";
+
 
 import { useContext } from "react";
 import { CartContext } from "../../components/store/cart-context";
 
 import styles from "../../styles/Checkout.module.scss";
+import btnStyles from "../../styles/UI/ButtonStyles.module.scss";
+
 
 export default function CheckoutPage() {
   const ctx = useContext(CartContext);
 
   const router = useRouter();
+
+  function cashPaymentListener() {
+      setRadio('Cash')
+  }
+
+  function emoneyPaymentListener() {
+    setRadio('emoney')
+      
+  }
+
+  const [radio, setRadio] = useState('Cash');
+
+  function onChangeRadio(e) {
+    setRadio({value : e.target.value})
+  }
+
+  function payBtnHandler() {
+      console.log('pay')
+  }
 
   return (
     <section className={styles.background}>
@@ -42,7 +65,7 @@ export default function CheckoutPage() {
                       </div>
                       <div className={styles.inputGroup__item}>
                           <label>Phone Number</label>
-                          <input type="number" name="number" id="number" placeholder="+1 202 303 4444" />
+                          <input type="text" name="number" id="number" placeholder="+1 202 303 4444" />
                       </div>
                   </div>
 
@@ -69,10 +92,76 @@ export default function CheckoutPage() {
                   </div>
 
                   <h3>Payment details</h3>
+                  <div className={styles.paymentDetailsContainer}>
+                    <p>Payment Method</p>
+                    <div className={styles.paymentDetailsRadioContainer}>
+                        <div onClick={emoneyPaymentListener}>
+                            <input type="radio" name="paymentMethod" checked = {radio === 'emoney'} onChange = {onChangeRadio} value= "emoney"/>
+                            <label>E-Money</label>
+                        </div>
+                        <div onClick={cashPaymentListener}>
+                            <input type="radio" name="paymentMethod" checked = {radio === 'Cash'} onChange = {onChangeRadio} value= "Cash"/>
+                            <label>Cash On Delivery</label>
+                        </div>
+                    </div>
+                  </div>
+
+                  <p style={{display: `${radio == 'Cash' ? 'initial' : 'none'}`}} className={styles.cashOnDelivery}>The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.</p>
+
+                  <div style={{display: `${radio == 'emoney' ? 'flex' : 'none'}`}}className={styles.inputGroup}>
+                      <div style={{marginBottom: 0}} className={styles.inputGroup__item}>
+                          <label>E-Money Number</label>
+                          <input style={{marginBottom: 0}} type="text" name="eNumber" id="eNumber" placeholder="23749392" />
+                      </div>
+                      <div style={{marginBottom: 0}} className={styles.inputGroup__item}>
+                          <label>E-Money Pin</label>
+                          <input style={{marginBottom: 0}} type="text" name="ePin" id="ePin" placeholder="12345" />
+                      </div>
+                      
+                  </div>
+
 
               </form>
           </div>
-          <div className={styles.checkoutSummary}>summary</div>
+          <div className={styles.checkoutSummary}>
+              <div>
+          <h3>Summary</h3>
+              <div className={styles.checkoutSummary_middle}>
+              
+                {ctx.cart.map((item, index) => {
+                    if(item.totalInCart > 0){
+                        return <CartItem item={item} key={index}/>
+                    }
+                })}
+                {ctx.cartTotal == 0 ? <p className={styles.cartContentContainer_middle_empty}>Your cart is empty</p> : <span></span>}
+            </div>
+            </div>
+
+            <div className={styles.totals}>
+                <div>
+                    <p className={styles.totals_heading}>Total</p>
+                    <p className={styles.totals_number}>${ctx.cartPrice}</p>
+                </div>
+                <div>
+                    <p className={styles.totals_heading}>Shipping</p>
+                    <p className={styles.totals_number}>${Math.floor(ctx.cartPrice / 100) }</p>
+                </div>
+                <div>
+                    <p className={styles.totals_heading}>VAT (included)</p>
+                    <p className={styles.totals_number}>${Math.floor(ctx.cartPrice / 1000) }</p>
+                </div>
+                <br>
+                </br>
+                <div>
+                    <p className={styles.totals_heading}>Grand total</p>
+                    <p style={{color: 'var(--color-pry-100)'}} className={styles.totals_number}>${Math.floor(ctx.cartPrice / 1000) + Math.floor(ctx.cartPrice / 100) + ctx.cartPrice}</p>
+                </div>
+            <a style={{width: '100%'}} onClick={payBtnHandler} className={btnStyles.btnPrimary}>Continue & pay</a>
+
+            </div>
+
+
+          </div>
         </div>
       </div>
     </section>
