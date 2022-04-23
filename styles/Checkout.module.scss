@@ -201,7 +201,7 @@
 
     h3 {
         text-transform: uppercase;
-        font-size: 1.125rem;
+        font-size: 1.125rem;  
         margin: 0;
         margin-bottom: 2rem;
     }
@@ -213,6 +213,12 @@
       flex-direction: column;
       overflow-y: scroll;
       padding-bottom: 3rem;
+
+      &_empty {
+        font-weight: 700;
+        text-align: center;
+        
+      }
     }
 
     

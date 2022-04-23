@@ -52,12 +52,12 @@ export default function CheckoutPage() {
         <div className={styles.checkoutContainer}>
           <div className={styles.checkoutForm}>
               <h2>Checkout</h2>
-              <form>
+              <form id="checkoutForm">
                   <h3>Billing details</h3>
                   <div className={styles.inputGroup}>
                       <div className={styles.inputGroup__item}>
                           <label>Name</label>
-                          <input type="text" name="name" id="name" placeholder="Graham Kirwan" />
+                          <input required type="text" name="name" id="name" placeholder="Graham Kirwan" />
                       </div>
                       <div className={styles.inputGroup__item}>
                           <label>Email Address</label>
@@ -133,7 +133,7 @@ export default function CheckoutPage() {
                         return <CartItem item={item} key={index}/>
                     }
                 })}
-                {ctx.cartTotal == 0 ? <p className={styles.cartContentContainer_middle_empty}>Your cart is empty</p> : <span></span>}
+                {ctx.cartTotal == 0 ? <p className={styles.checkoutSummary_middle_empty}>Your cart is empty!</p> : <span></span>}
             </div>
             </div>
 
@@ -156,7 +156,7 @@ export default function CheckoutPage() {
                     <p className={styles.totals_heading}>Grand total</p>
                     <p style={{color: 'var(--color-pry-100)'}} className={styles.totals_number}>${Math.floor(ctx.cartPrice / 1000) + Math.floor(ctx.cartPrice / 100) + ctx.cartPrice}</p>
                 </div>
-            <a style={{width: '100%'}} onClick={payBtnHandler} className={btnStyles.btnPrimary}>Continue & pay</a>
+            <button form="checkoutForm" type="submit" style={{width: '100%', border: 'none'}} onSubmit={payBtnHandler} className={btnStyles.btnPrimary}>Continue & pay</button>
 
             </div>
 
