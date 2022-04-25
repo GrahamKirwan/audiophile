@@ -1,4 +1,5 @@
 import React from 'react'
+import Head from 'next/head'
 
 import HeroMain from '../../components/Reusable/HeroMain'
 import ThreeCardProducts from '../../components/Reusable/ThreeCardProducts'
@@ -21,6 +22,13 @@ export default function EarphonesPage() {
 
   return (
     <>
+    <Head>
+        <title>Earphones | Audiophile</title>
+        <meta
+          name="description"
+          content="Check out our selection of high end Earphones."
+        />
+      </Head>
         <HeroMain page='Earphones' />
         {newData.map((product, index) => <ProductAbout productDetails={product} id={index} key={index}/>)}
         <ThreeCardProducts topMargin={true} />

@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -47,6 +48,13 @@ export default function ProductPage(props) {
 
   return (
     <>
+    <Head>
+        <title>{productData.name} | Audiophile</title>
+        <meta
+          name="description"
+          content="Check out our selection of high end Speakers."
+        />
+      </Head>
       <div className={styles.btnContainer}>
         <button onClick={() => router.back()}>Go Back</button>
       </div>
