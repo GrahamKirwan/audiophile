@@ -2,7 +2,6 @@ import React from "react";
 
 import { useState } from "react";
 import { useRouter } from "next/router";
-import Link from "next/link";
 
 import CartItem from "../../components/Reusable/CartItem";
 
@@ -61,11 +60,11 @@ export default function CheckoutPage() {
                       </div>
                       <div className={styles.inputGroup__item}>
                           <label>Email Address</label>
-                          <input type="email" name="email" id="email" placeholder="gkirwan@gmail.com" />
+                          <input required type="email" name="email" id="email" placeholder="gkirwan@gmail.com" />
                       </div>
                       <div className={styles.inputGroup__item}>
                           <label>Phone Number</label>
-                          <input type="text" name="number" id="number" placeholder="+1 202 303 4444" />
+                          <input required type="text" name="number" id="number" placeholder="+1 202 303 4444" />
                       </div>
                   </div>
 
@@ -75,19 +74,19 @@ export default function CheckoutPage() {
                   <div className={styles.inputGroup}>
                       <div style={{width: '100%'}} className={styles.inputGroup__item}>
                           <label>Address</label>
-                          <input type="text" name="address" id="address" placeholder="1973 King Street West" />
+                          <input required type="text" name="address" id="address" placeholder="1973 King Street West" />
                       </div>
                       <div className={styles.inputGroup__item}>
                           <label>Zip Code</label>
-                          <input type="text" name="zip" id="zip" placeholder="M1M9D7" />
+                          <input required type="text" name="zip" id="zip" placeholder="M1M9D7" />
                       </div>
                       <div className={styles.inputGroup__item}>
                           <label>City</label>
-                          <input type="text" name="city" id="city" placeholder="Chicago" />
+                          <input required type="text" name="city" id="city" placeholder="Chicago" />
                       </div>
                       <div className={styles.inputGroup__item}>
                           <label>Country</label>
-                          <input type="text" name="country" id="country" placeholder="United States" />
+                          <input required type="text" name="country" id="country" placeholder="United States" />
                       </div>
                   </div>
 
