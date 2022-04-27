@@ -1,42 +1,68 @@
-## Todo
+# Frontend Mentor - Product feedback app solution
 
-Form error checking / success modal
-Toast notifications
-Page metadata
-Responsive
+This is a solution to the [Product Audiophile e-commerce website challenge on Frontend Mentor](hhttps://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx).
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Table of contents
 
-## Getting Started
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### The challenge
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Users should be able to:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- See hover states for all interactive elements on the page
+- Add/Remove products from the cart
+- Edit product quantities in the cart
+- Fill in all fields in the checkout
+- Receive form validations if fields are missed or incorrect during checkout
+- See correct checkout totals depending on the products in the cart
+- See an order confirmation modal after checking out with an order summary
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Screenshot
 
-## Learn More
+![](./preview.png)
 
-To learn more about Next.js, take a look at the following resources:
+### Links
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Solution URL: [https://github.com/GrahamKirwan/audiophile](https://github.com/GrahamKirwan/audiophile)
+- Live Site URL: [https://react-product-feedback.vercel.app/](https://react-product-feedback.vercel.app/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## My process
 
-## Deploy on Vercel
+### Built with
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [NextJS](https://nextjs.org/) - JS library
+- Hooks, Context, Router
+- [Sass modules] - For styles
+- Flexbox & CSS Grid
+- Figma for design
+- Vercel for deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
+### What I learned
+
+My goal with this project was to build something robust with NextJS, as my last few projects have been using React. I wanted my internal pages to have valid SEO value and I wanted to focus on keeping components and functions small and clean.
+
+
+### Continued development
+
+I could have spent more time finessing the mobile version of this project but spending a couple of hours on media queries was not the goal of this project and so some quick media queries were added to make the site function on mobile - I could come back to this.
+I could have also spent more than on form validation but again, this was not the goal of this project and so some simple 'required' pseudo-class' were added.
+
+
+## Author
+
+- Website - [https://grahamkirwan.github.io/](https://grahamkirwan.github.io/)
