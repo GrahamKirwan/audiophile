@@ -9,6 +9,15 @@
   display: flex;
   padding-bottom: 3rem;
 
+  @media screen and (max-width: 1200px) {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    }
+
+    @media screen and (max-width: 950px) {
+        flex-direction: column;
+      }
+
   &_left {
     flex: 1;
     position: relative;

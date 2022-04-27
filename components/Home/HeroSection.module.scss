@@ -15,6 +15,10 @@
   display: flex;
   justify-content: space-between;
   height: 40rem;
+
+  @media screen and (max-width: 950px) {
+    flex-direction: column;
+  }
 }
 
 .heroContainerLeft {
@@ -23,6 +27,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media screen and (max-width: 950px) {
+    align-items: center;
+  }
 
   h2 {
     text-transform: uppercase;
@@ -57,4 +65,8 @@
   background: url("/images/home/desktop/headphone-hero-image.png");
   background-repeat: no-repeat;
   background-position: right;
+
+  @media screen and (max-width: 950px) {
+    display: none;
+  }
 }
