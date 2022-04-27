@@ -28,6 +28,10 @@
   display: flex;
   text-transform: uppercase;
 
+  @media screen and (max-width: 690px) {
+    display: none;
+  }
+
   li {
     margin: 0 15px;
 
@@ -42,6 +46,8 @@
 .cartNotiContainer {
   position: relative;
   cursor: pointer;
+
+
 }
 
 .cartNoti {
