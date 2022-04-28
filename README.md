@@ -38,7 +38,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/GrahamKirwan/audiophile](https://github.com/GrahamKirwan/audiophile)
-- Live Site URL: [https://react-product-feedback.vercel.app/](https://react-product-feedback.vercel.app/)
+- Live Site URL: [https://audiophile-psi.vercel.app/](https://audiophile-psi.vercel.app/)
 
 ## My process
 
