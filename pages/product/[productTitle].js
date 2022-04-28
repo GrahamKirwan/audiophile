@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Image from "next/image";
 
 import ThreeCardProducts from "../../components/Reusable/ThreeCardProducts";
 import AboutComp from "../../components/Reusable/AboutComp";
