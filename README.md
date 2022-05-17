@@ -1,6 +1,4 @@
-# Frontend Mentor - Audiophile e-commerce app solution
-
-This is a solution to the [Audiophile e-commerce website challenge on Frontend Mentor](hhttps://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx).
+# Audiophile e-commerce app solution
 
 ## Table of contents
 
@@ -18,8 +16,6 @@ This is a solution to the [Audiophile e-commerce website challenge on Frontend M
 
 
 ## Overview
-
-### The challenge
 
 Users should be able to:
 
